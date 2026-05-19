@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סוכן חלפים חכם - AutoParts AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <header class="main-header">
+        <h1>🛠️ AutoParts <span class="highlight">AI Agent</span></h1>
+        <p>איתור והזמנת חלקי חילוף חכמה לפי מספר רכב ומק"ט</p>
+    </header>
+
+    <main class="container">
+        
+        <section class="search-section card">
+            <h2>חיפוש רכב במאגר</h2>
+            <div class="search-group">
+                <input type="text" id="vehicle-search" placeholder="הקש מספר רכב (7-8 ספרות) או מספר שלדה (VIN)...">
+                <button id="btn-search-vehicle">חפש רכב</button>
+            </div>
+
+            <div class="sites-filter-container">
+                <h3>סנן אתרי רכישה (20 אתרים מובילים):</h3>
+                <div class="sites-grid" id="sites-grid">
+                    <label class="site-tag"><input type="checkbox" checked value="autodoc"> AutoDoc (אירופה)</label>
+                    <label class="site-tag"><input type="checkbox" checked value="rockauto"> RockAuto (ארה"ב)</label>
+                    <label class="site-tag"><input type="checkbox" checked value="ebay"> eBay Motors</label>
+                    <label class="site-tag"><input type="checkbox" checked value="amazon"> Amazon Automotive</label>
+                    <label class="site-tag"><input type="checkbox" checked value="partsouq"> PartSouq</label>
+                    <label class="site-tag"><input type="checkbox" checked value="amayama"> Amayama</label>
+                    <label class="site-tag"><input type="checkbox" checked value="carparts"> CarParts.com</label>
+                    <label class="site-tag"><input type="checkbox" checked value="aliexpress"> AliExpress</label>
+                    <label class="site-tag"><input type="checkbox" checked value="junkyard"> מאגר (ישראל)</label>
+                    <label class="site-tag"><input type="checkbox" checked value="solo"> סולו (ישראל)</label>
+                    <label class="site-tag"><input type="checkbox" checked value="galor"> גל-אור</label>
+                    <label class="site-tag"><input type="checkbox" checked value="partslink"> Partslink24</label>
+                    <label class="site-tag"><input type="checkbox" checked value="buyacar"> BuyACar</label>
+                    <label class="site-tag"><input type="checkbox" checked value="pelican"> Pelican Parts</label>
+                    <label class="site-tag"><input type="checkbox" checked value="fcpeuro"> FCP Euro</label>
+                    <label class="site-tag"><input type="checkbox" checked value="ecs"> ECS Tuning</label>
+                    <label class="site-tag"><input type="checkbox" checked value="megazip"> MegaZip</label>
+                    <label class="site-tag"><input type="checkbox" checked value="spares"> Cars245</label>
+                    <label class="site-tag"><input type="checkbox" checked value="trodo"> Trodo</label>
+                    <label class="site-tag"><input type="checkbox" checked value="israeli-sub"> יבואן רשמי</label>
+                </div>
+            </div>
+        </section>
+
+        <section class="vehicle-details-section card" id="vehicle-details-box">
+            <h2>📋 פרטי הרכב (משרד התחבורה)</h2>
+            <div class="details-grid">
+                <div class="detail-item"><strong>יצרן:</strong> <span id="car-brand">-</span></div>
+                <div class="detail-item"><strong>דגם:</strong> <span id="car-model">-</span></div>
+                <div class="detail-item"><strong>שנת ייצור:</strong> <span id="car-year">-</span></div>
+                <div class="detail-item"><strong>קוד מנוע:</strong> <span id="car-engine">-</span></div>
+                <div class="detail-item"><strong>מספר שלדה (VIN):</strong> <span id="car-vin">-</span></div>
+                <div class="detail-item"><strong>קבוצת רישוי:</strong> <span id="car-group">-</span></div>
+            </div>
+        </section>
+
+        <section class="parts-section card">
+            <h2>📦 קטלוג חלקי חילוף מותאמים</h2>
+            
+            <div class="parts-search-group">
+                <input type="text" id="parts-filter" placeholder="חפש חלק לפי שם או מק&quot;ט בתוך התוצאות...">
+            </div>
+
+            <div class="categories-container">
+                
+                <div class="category-block">
+                    <h3>⚙️ מנוע ומערכת הנעה</h3>
+                    <div class="parts-list">
+                        <div class="part-item">
+                            <span class="part-name">מסנן שמן מנוע (Oil Filter)</span>
+                            <span class="part-sku">מק"ט: <code>B6Y1-14-302A</code></span>
+                        </div>
+                        <div class="part-item">
+                            <span class="part-name">מצתים (Spark Plugs)</span>
+                            <span class="part-sku">מק"ט: <code>PE5R-18-110</code></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-block">
+                    <h3>💺 חלקי פנים ואינטרור</h3>
+                    <div class="parts-list">
+                        <div class="part-item">
+                            <span class="part-name">מפסק חלון חשמל ראשי</span>
+                            <span class="part-sku">מק"ט: <code>G46C-66-350M</code></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-block">
+                    <h3>🚘 פלסטיקה ומרכב חיצוני</h3>
+                    <div class="parts-list">
+                        <div class="part-item">
+                            <span class="part-name">מגן בוץ קדמי ימין</span>
+                            <span class="part-sku">מק"ט: <code>BHP1-56-111E</code></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-block">
+                    <h3>⚡ מערכות חשמל ואלקטרוניקה</h3>
+                    <div class="parts-list">
+                        <div class="part-item">
+                            <span class="part-name">אלטרנטור 12V 100A</span>
+                            <span class="part-sku">מק"ט: <code>PE01-18-300B</code></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="youtube-section card">
+            <h2>📺 מדריכי וידאו ותיקון (YouTube)</h2>
+            <p class="section-subtitle">סרטונים שהופקו אוטומטית לפי שם החלק והמק"ט הנבחר</p>
+            <div class="video-grid" id="video-grid">
+                <div class="video-card">
+                    <div class="video-placeholder">▶️ נגן וידאו</div>
+                    <div class="video-info">
+                        <h4>איך להחליף מסנן שמן ומצתים למאזדה 3</h4>
+                        <p>חיפוש: "PE5R-18-110 replacement How-to"</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-placeholder">▶️ נגן וידאו</div>
+                    <div class="video-info">
+                        <h4>תיקון מפסק חלון חשמל ברכב - עשה זאת בעצמך</h4>
+                        <p>חיפוש: "G46C-66-350M fix"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2026 AutoParts AI Agent - כל הזכויות שמורות</p>
+    </footer>
+
+</body>
+</html>
