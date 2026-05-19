@@ -1,3 +1,4 @@
+alert("היי! קובץ app.js נטען בהצלחה בדפדפן!");
 document.getElementById('btn-search-vehicle').addEventListener('click', async () => {
     const plateInput = document.getElementById('vehicle-search').value;
     const btn = document.getElementById('btn-search-vehicle');
